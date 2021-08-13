@@ -1,0 +1,31 @@
+{% extends "page.html" %}
+
+
+{% block content %}
+    <div class="container pt-3">
+        <h1>Adicionar Tarefas</h1>
+            <form action="submit" method="POST">
+            {% csrf_token %}
+                <label>Titulo</label>
+                <br>
+                    <input type="text" name="titulo" size="25">
+                <br>
+                <label>Nome</label>
+                <br>
+                    <input type="text" name="nome" size="25">
+                <br>
+                <label>Inicio</label>
+                <br>
+                    <input type="datetime-local" name="data_inicio">
+                <br>
+                <br>
+                <label>Descrições</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <br><br>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="/">
+                    <button type="button" class="btn btn-dark">Cancelar</button>   
+                </a>
+            </form>
+    </div>
+{% endblock %}

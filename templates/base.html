@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+
+
+{% block content %}
+<div class="container">
+<div class="jumbotron">
+    <h1>Agendamentos</h1>
+        <a href="tarefas/">
+        <button type="button" class="btn btn-success">Incluir Tarefa</button>
+        </a>
+        <ul class="list-group">
+        {% for eventos in eventos %}
+        <li><input type="checkbox"/></li>
+        {{ eventos.titulo }}
+        <br>
+        {{ eventos.get_data_inicio }}
+        <br>
+        {{ eventos.nome }}
+        <br> 
+        <a href="tarefas/delete/{{ eventos.id }}/">Excluir</a> 
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
